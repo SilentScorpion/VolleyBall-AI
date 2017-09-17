@@ -19,7 +19,8 @@ This state machine has 4 states represented by 4 coroutines...
 4. MoveTowardsPrediction() - predict where the ball will land and simply move towards that position
 
 ``
-    private void FixedUpdate() {
+        
+        private void FixedUpdate() {
         grounded = Physics2D.OverlapCircle(groundChecker.transform.position, groundCheckRadius, whatIsGround);
 
         if (GameController.playStarted && !BallBehaviour.connected) {           
@@ -58,7 +59,7 @@ This state machine has 4 states represented by 4 coroutines...
 On Collision With the player, the ball will be hit with a much random direction
 
 ``
- private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnCollisionEnter2D(Collision2D collision) {
         //Apply force to the ball so that it moves in the proper direction when hit by the player Controller
         if (collision.collider.CompareTag("Ball")) {
             ball.GetComponent<AudioSource>().Play();
